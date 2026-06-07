@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:5173\" -TimeoutSec 5 -UseBasicParsing; \"OK: $\\($r.StatusCode\\)\" } catch { \"OFFLINE: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(Start-Process -FilePath \"cmd.exe\" -ArgumentList \"/c\", \"cd /d d:\\\\cha-de-bebe\\\\client && node_modules\\\\.bin\\\\vite.cmd\" -WindowStyle Normal)",
+      "PowerShell(Start-Sleep -Seconds 4; try { $r = Invoke-WebRequest -Uri \"http://localhost:5173\" -TimeoutSec 5 -UseBasicParsing; \"OK: $\\($r.StatusCode\\)\" } catch { \"OFFLINE: $\\($_.Exception.Message\\)\" })",
+      "Bash(curl -s -X POST http://localhost:3001/api/admin/presentes -H 'Content-Type: application/json' -H 'x-admin-password: admin123' -d '{ *)",
+      "Bash(curl -s -X DELETE http://localhost:3001/api/admin/presentes/10 -H \"x-admin-password: admin123\")",
+      "Bash(node -e ' *)",
+      "Bash(npm run *)"
+    ]
+  }
+}
